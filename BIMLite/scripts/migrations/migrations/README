@@ -1,0 +1,26 @@
+Pre-requisites
+1. MariaDB 10.0 version
+2. Database named 'bimlite'
+3. Set this project root folder in PYTHONPATH if not set
+
+For QA and Prod:
+----------------
+For upgrading the DB
+1. Run teh below command
+    'python manage.py upgrade' - This command executes the sql scripts in the Database.
+
+For downgrading the DB
+1. Run the below command
+    'python manage.py downgrade <version_number>' - This will downgrade the database to the given version_number.
+
+------------------------------------------------------------------------------------------------------------------
+
+For Development
+---------------
+--One time task - for new migrations--
+Run - 'python manage.py version_control' to create the migration table in the DB.
+
+For adding new sql scripts:
+1. Run the below command
+    'python manage.py script_sql mysql "description_of_script"' - This creates the required upgrade and downgrade files.
+    Add the required scripts in both of the .sql files and then run upgrades for updating the DB
